@@ -1,0 +1,149 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-pi-pico",
+      "id": "pico",
+      "top": 0,
+      "left": 0,
+      "attrs": { "env": "micropython-20230426-v1.20.0" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn2",
+      "top": 151.36,
+      "left": -264.67,
+      "attrs": { "color": "green", "bounce": "0" }
+    },
+    {
+      "type": "wokwi-pir-motion-sensor",
+      "id": "pir1",
+      "top": -125.74,
+      "left": 119.02,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -31.51,
+      "left": -193.61,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 8.6,
+      "left": -125.95,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -9.58,
+      "left": -239.36,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 45.6,
+      "left": -141.56,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": 56.31,
+      "left": -273.58,
+      "attrs": { "color": "yellow" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": 102.83,
+      "left": -170.39,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": 243.18,
+      "left": 228.97,
+      "attrs": { "pins": "i2c" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led4",
+      "top": -41.24,
+      "left": 448.37,
+      "attrs": { "color": "red", "flip": "1" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r4",
+      "top": 63.65,
+      "left": 281.06,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led5",
+      "top": 44.42,
+      "left": 518.46,
+      "attrs": { "color": "green", "flip": "1" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r5",
+      "top": 104.27,
+      "left": 292.54,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led6",
+      "top": 110.98,
+      "left": 581.45,
+      "attrs": { "color": "yellow", "flip": "1" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r6",
+      "top": 189.04,
+      "left": 405.85,
+      "attrs": { "value": "1000" }
+    }
+  ],
+  "connections": [
+    [ "pir1:VCC", "pico:VBUS", "red", [ "v0" ] ],
+    [ "pir1:GND", "pico:GND.8", "black", [ "v0" ] ],
+    [ "pir1:OUT", "pico:GP28", "green", [ "v0" ] ],
+    [ "r1:2", "pico:GP0", "red", [ "v0" ] ],
+    [ "led1:A", "r1:1", "red", [ "v0" ] ],
+    [ "led1:C", "pico:GND.1", "black", [ "v0" ] ],
+    [ "led2:A", "r2:1", "green", [ "v19.1", "h72.8" ] ],
+    [ "led2:C", "pico:GND.2", "black", [ "v0" ] ],
+    [ "r2:2", "pico:GP3", "green", [ "v0" ] ],
+    [ "r3:2", "pico:GP8", "yellow", [ "v0" ] ],
+    [ "led3:A", "r3:1", "yellow", [ "v0" ] ],
+    [ "led3:C", "pico:GND.3", "black", [ "v0" ] ],
+    [ "lcd1:SDA", "pico:GP20", "gold", [ "h0" ] ],
+    [ "btn2:1.r", "pico:GP12", "green", [ "v-3.61", "h201.73" ] ],
+    [ "btn2:2.r", "pico:GND.4", "black", [ "h0" ] ],
+    [ "pico:GP21", "lcd1:SCL", "blue", [ "h0" ] ],
+    [ "lcd1:GND", "pico:GND.6", "black", [ "h0" ] ],
+    [ "lcd1:VCC", "pico:3V3", "red", [ "h0" ] ],
+    [ "pico:GP28", "r4:1", "red", [ "h0" ] ],
+    [ "r4:2", "led4:A", "red", [ "v0.13", "h123.51" ] ],
+    [ "led4:C", "pico:GND.7", "black", [ "v0" ] ],
+    [ "pico:GP22", "r5:1", "green", [ "v-8.5", "h220.54" ] ],
+    [ "r5:2", "led5:A", "green", [ "v-1.01", "h182.12" ] ],
+    [ "pico:GND.6", "led5:C", "black", [ "h0" ] ],
+    [ "pico:GP18", "r6:1", "yellow", [ "h217.5", "v30.41" ] ],
+    [ "led6:A", "r6:2", "yellow", [ "v0" ] ],
+    [ "led6:C", "pico:GND.5", "black", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
